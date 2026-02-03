@@ -1,3 +1,127 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        color-scheme: light;
+    }
+
+    body {
+        @apply bg-sand-50 text-ink-900 antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-serif text-ink-900 tracking-tight;
+    }
+
+    p {
+        @apply text-ink-700;
+    }
+}
+
+@layer components {
+    .page-shell {
+        background-image:
+            radial-gradient(60rem 40rem at 10% -10%, rgba(179, 102, 57, 0.12), transparent 60%),
+            radial-gradient(50rem 30rem at 90% 0%, rgba(95, 114, 109, 0.12), transparent 55%),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(248, 246, 243, 0.6));
+    }
+
+    .glass {
+        @apply bg-white/80 backdrop-blur border border-sand-200 shadow-soft;
+    }
+
+    .card {
+        @apply rounded-2xl bg-white/90 backdrop-blur border border-sand-200 shadow-soft;
+    }
+
+    .card-header {
+        @apply px-6 pt-5 pb-2 text-xs uppercase tracking-[0.18em] text-ink-500;
+    }
+
+    .card-body {
+        @apply px-6 pb-6;
+    }
+
+    .nav-link {
+        @apply text-sm font-medium text-ink-700 hover:text-ink-900 transition;
+    }
+
+    .nav-link-active {
+        @apply text-ink-900;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition;
+    }
+
+    .btn-primary {
+        @apply bg-ink-900 text-white hover:bg-ink-800;
+    }
+
+    .btn-secondary {
+        @apply bg-white/70 text-ink-800 border border-sand-300 hover:border-ink-800;
+    }
+
+    .btn-outline {
+        @apply border border-sand-300 text-ink-700 hover:border-ink-700 hover:text-ink-900;
+    }
+
+    .btn-ghost {
+        @apply text-ink-600 hover:text-ink-900;
+    }
+
+    .btn-danger {
+        @apply bg-rose-600 text-white hover:bg-rose-500;
+    }
+
+    .form-label {
+        @apply text-xs uppercase tracking-[0.18em] text-ink-500;
+    }
+
+    .form-input {
+        @apply w-full rounded-xl border border-sand-300 bg-white/80 px-3 py-2 text-sm text-ink-900 shadow-sm focus:border-ink-700 focus:ring-ink-700;
+    }
+
+    .form-select {
+        @apply w-full rounded-xl border border-sand-300 bg-white/80 px-3 py-2 text-sm text-ink-900 shadow-sm focus:border-ink-700 focus:ring-ink-700;
+    }
+
+    .form-help {
+        @apply text-xs text-ink-600;
+    }
+
+    .table {
+        @apply w-full text-sm;
+    }
+
+    .table thead th {
+        @apply text-left text-xs uppercase tracking-[0.18em] text-ink-500 pb-3;
+    }
+
+    .table tbody td {
+        @apply py-3 border-t border-sand-100;
+    }
+
+    .badge {
+        @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium;
+    }
+
+    .badge-success {
+        @apply bg-emerald-100 text-emerald-800;
+    }
+
+    .badge-neutral {
+        @apply bg-sand-200 text-ink-700;
+    }
+
+    .badge-warning {
+        @apply bg-amber-100 text-amber-700;
+    }
+}

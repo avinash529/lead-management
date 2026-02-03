@@ -1,24 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h4 class="mb-3">Edit User Role</h4>
+<div class="space-y-6">
+    <div>
+        <p class="text-xs uppercase tracking-[0.18em] text-ink-500">Administration</p>
+        <h1 class="text-3xl md:text-4xl">Edit User Role</h1>
+    </div>
 
-    <form method="POST" action="{{ route('admin.users.update', $user) }}">
+    <form method="POST" action="{{ route('admin.users.update', $user) }}" class="card p-6 space-y-5">
         @csrf
         @method('PUT')
 
-        <div class="mb-3">
+        <div class="space-y-2">
             <label class="form-label">Name</label>
-            <input type="text" class="form-control" value="{{ $user->name }}" disabled>
+            <input type="text" class="form-input" value="{{ $user->name }}" disabled>
         </div>
 
-        <div class="mb-3">
+        <div class="space-y-2">
             <label class="form-label">Email</label>
-            <input type="text" class="form-control" value="{{ $user->email }}" disabled>
+            <input type="text" class="form-input" value="{{ $user->email }}" disabled>
         </div>
 
-        <div class="mb-3">
+        <div class="space-y-2">
             <label class="form-label">Role</label>
             <select name="role" class="form-select">
                 <option value="user" {{ $user->role === 'user' ? 'selected' : '' }}>User</option>
@@ -26,8 +29,10 @@
             </select>
         </div>
 
-        <button class="btn btn-primary">Update</button>
-        <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Back</a>
+        <div class="flex flex-wrap gap-2">
+            <button class="btn btn-primary">Update</button>
+            <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Back</a>
+        </div>
     </form>
 </div>
 @endsection
