@@ -25,22 +25,22 @@
         </div>
 
         <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-sand-300 text-ink-900 shadow-sm focus:ring-ink-700" name="remember">
-                <span class="ms-2 text-sm text-ink-600">{{ __('Remember me') }}</span>
+        <div class="block mt-6">
+            <label for="remember_me" class="inline-flex items-center group cursor-pointer">
+                <input id="remember_me" type="checkbox" class="rounded border-white/10 bg-white/5 text-brand-500 shadow-sm focus:ring-brand-500 focus:ring-offset-0 transition-colors" name="remember">
+                <span class="ms-3 text-sm font-bold uppercase tracking-widest text-white/40 group-hover:text-white/60 transition-colors">{{ __('Remember me') }}</span>
             </label>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
+        <div class="flex items-center justify-between mt-8 pt-6 border-t border-white/5">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-ink-600 hover:text-ink-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ink-700" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+                <a class="text-xs font-bold uppercase tracking-widest text-white/30 hover:text-white transition-colors" href="{{ route('password.request') }}">
+                    {{ __('Forgot password?') }}
                 </a>
             @endif
 
             <x-primary-button class="ms-3">
-                {{ __('Log in') }}
+                {{ __('Secure Log in') }}
             </x-primary-button>
         </div>
     </form>

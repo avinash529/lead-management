@@ -16,6 +16,9 @@ Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index
 
 // Authenticated routes
 Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Leads
     Route::post('leads/import', [LeadController::class, 'import'])->name('leads.import');

@@ -12,47 +12,45 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['"IBM Plex Sans"', ...defaultTheme.fontFamily.sans],
-                serif: ['Fraunces', ...defaultTheme.fontFamily.serif],
+                sans: ['"Inter"', ...defaultTheme.fontFamily.sans],
+                serif: ['"Calistoga"', ...defaultTheme.fontFamily.serif],
             },
             colors: {
-                ink: {
-                    950: '#0b0d12',
-                    900: '#111827',
-                    800: '#1f2937',
-                    700: '#374151',
-                    600: '#4b5563',
-                    500: '#6b7280',
+                brand: {
+                    50: '#f5f3ff',
+                    100: '#ede9fe',
+                    200: '#ddd6fe',
+                    300: '#c4b5fd',
+                    400: '#a78bfa',
+                    500: '#8b5cf6',
+                    600: '#7c3aed',
+                    700: '#6d28d9',
+                    800: '#5b21b6',
+                    900: '#4c1d95',
+                    950: '#2e1065',
                 },
-                sand: {
-                    50: '#f8f6f3',
-                    100: '#f2ede7',
-                    200: '#e8e0d7',
-                    300: '#d7cdc2',
+                accent: {
+                    cyan: '#22d3ee',
+                    pink: '#f472b6',
+                    indigo: '#6366f1',
+                    violet: '#8b5cf6',
                 },
-                copper: {
-                    50: '#fbf4ee',
-                    100: '#f6e6d7',
-                    200: '#ebc8aa',
-                    400: '#c57d4e',
-                    500: '#b36639',
-                    600: '#9b5a31',
-                    700: '#7c4727',
-                },
-                sage: {
-                    100: '#e2ebe8',
-                    300: '#b4c6c0',
-                    500: '#5f726d',
-                    700: '#4c5b56',
-                },
+                glass: {
+                    white: 'rgba(255, 255, 255, 0.15)',
+                    dark: 'rgba(0, 0, 0, 0.2)',
+                    border: 'rgba(255, 255, 255, 0.2)',
+                }
             },
             boxShadow: {
-                soft: '0 14px 40px -28px rgba(15, 23, 42, 0.45)',
+                'glass-sm': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                'glass-md': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                'glass-lg': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                'inner-light': 'inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
             },
-            borderRadius: {
-                '2xl': '1.25rem',
-                '3xl': '1.5rem',
-            },
+            backgroundImage: {
+                'mesh-gradient': "radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%)",
+                'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
+            }
         },
     },
 

@@ -1,4 +1,4 @@
-@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-2 bg-white/90 backdrop-blur'])
+@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-2'])
 
 @php
 $alignmentClasses = match ($align) {
@@ -25,7 +25,7 @@ $width = match ($width) {
             x-transition:leave="transition ease-in duration-75"
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-95"
-            class="absolute z-50 mt-2 {{ $width }} rounded-2xl shadow-soft border border-sand-200 {{ $alignmentClasses }}"
+            class="absolute z-[60] mt-2 {{ $width }} glass-panel !bg-black/90 !backdrop-blur-2xl !rounded-2xl shadow-2xl border border-white/10 {{ $alignmentClasses }}"
             style="display: none;"
             @click="open = false">
         <div class="rounded-2xl {{ $contentClasses }}">

@@ -1,23 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="space-y-6">
-    <div>
-        <p class="text-xs uppercase tracking-[0.18em] text-ink-500">Pipeline</p>
-        <h1 class="text-3xl md:text-4xl">Edit Lead</h1>
+<div class="max-w-2xl mx-auto space-y-10">
+    <div class="text-center space-y-2">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 mb-2">
+            <span class="h-1.5 w-1.5 rounded-full bg-accent-cyan"></span>
+            <span class="text-[10px] uppercase tracking-widest font-bold text-white/40">Modify Perspective</span>
+        </div>
+        <h1 class="text-4xl font-bold">Edit Lead</h1>
     </div>
 
-    <form method="POST" action="{{ route('leads.update', $lead) }}" class="card p-6 space-y-6">
+    <form method="POST" action="{{ route('leads.update', $lead) }}" class="glass-panel p-10 space-y-10">
         @csrf
         @method('PUT')
 
-        <div class="grid gap-5">
-            @include('leads.partials.form', ['lead' => $lead])
-        </div>
+        @include('leads.partials.form', ['lead' => $lead])
 
-        <div class="flex flex-wrap gap-2">
-            <button class="btn btn-primary">Update</button>
-            <a href="{{ route('leads.index') }}" class="btn btn-secondary">Back</a>
+        <div class="flex items-center justify-between pt-6 border-t border-white/5">
+            <a href="{{ route('leads.index') }}" class="text-sm font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors">Cancel</a>
+            <button class="btn btn-primary !px-10 !py-4 shadow-xl shadow-brand-500/20">Update entry</button>
         </div>
     </form>
 </div>
